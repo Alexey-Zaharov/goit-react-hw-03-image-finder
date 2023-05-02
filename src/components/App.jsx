@@ -23,8 +23,6 @@ class App extends Component {
       prevState.filter !== this.state.filter ||
       prevState.currentPage !== this.state.currentPage
     ) {
-      console.log('Did Update');
-
       this.setState({ isLoading: true });
       fetch(
         `https://pixabay.com/api/?q=${this.state.filter}&page=${this.state.currentPage}&key=34544645-2c62a1021489ea1157fadd1e4&image_type=photo&orientation=horizontal&per_page=12`
