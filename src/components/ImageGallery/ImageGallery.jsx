@@ -6,11 +6,18 @@ import css from './ImageGallery.module.css';
 const ImageGallery = ({ showModal, dataToRender, getData }) => {
   return (
     <ul className={css.ImageGallery} name="gallery">
-      <ImageGalleryItem
-        showModal={showModal}
-        getData={getData}
-        imeges={dataToRender}
-      />
+      {dataToRender.map(({ id, tags, largeImageURL, webformatURL }) => {
+        return (
+          <ImageGalleryItem
+            key={id}
+            showModal={showModal}
+            getData={getData}
+            tags={tags}
+            largeImageURL={largeImageURL}
+            webformatURL={webformatURL}
+          />
+        );
+      })}
     </ul>
   );
 };
