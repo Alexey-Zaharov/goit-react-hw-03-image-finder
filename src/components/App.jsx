@@ -61,8 +61,13 @@ class App extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    if (event.currentTarget.elements.search.value.trim() === '') {
-      toast('No data to search!');
+    if (
+      event.currentTarget.elements.search.value.trim() === '' ||
+      event.currentTarget.elements.search.value.trim() === this.state.filter
+    ) {
+      toast(
+        `WHOOPS!!! No data to search or you are alredy looking on "${event.currentTarget.elements.search.value.trim()}"`
+      );
       return;
     }
     this.setState({
