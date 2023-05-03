@@ -65,9 +65,7 @@ class App extends Component {
       event.currentTarget.elements.search.value.trim() === '' ||
       event.currentTarget.elements.search.value.trim() === this.state.filter
     ) {
-      toast(
-        `WHOOPS!!! No data to search or you are alredy looking on "${event.currentTarget.elements.search.value.trim()}"`
-      );
+      toast(`WHOOPS!!! No data to search or you are alredy looking on IT`);
       return;
     }
     this.setState({
